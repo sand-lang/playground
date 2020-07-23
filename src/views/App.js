@@ -37,7 +37,7 @@ class App extends React.Component {
       });
     } else {
       this.setState({
-        output: data.stderr,
+        output: data.stderr || (typeof data.error === 'string' ? data.error : 'An error occured.'),
         is_error: true,
       });
     }
